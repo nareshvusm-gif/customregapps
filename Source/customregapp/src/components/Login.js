@@ -15,20 +15,22 @@ function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-container.header">
+    <div className="div-container">
+      <div className="div-container.header">
         <h2 className='text'>Login</h2>
         <div className="underline"></div>
       </div>
       <br />
-      <form className="auth-container.form" onSubmit={handleLogin}>
-        <input className="input" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
+      <form className="form-container" onSubmit={handleLogin}>
+        <p className='p-username'>Username or email address *</p>
+        <input className="input-text" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
         <br />
-        <input className="input" type="password" placeholder="Password" required />
+        <p className='p-pwd'>Password *</p>
+        <input className="input-text" type="password" placeholder="Password" required />
         <br />
         <button className="submit" type="submit">Login</button>
       </form>
-      <p className="p">New User? <Link to="/register">Register instead</Link></p>
+      <p className="r-submit"><Link to="/register">REGISTER</Link></p>
     </div>
   );
 }
