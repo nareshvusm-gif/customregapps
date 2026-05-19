@@ -2,15 +2,20 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/dashboard';
+import BookingList from './components/BookingList';
+import BookingLists from './components/BookingLists';
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/BookingList" element={<BookingList />} />
+        <Route path="/BookingLists" element={<BookingLists />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/" element={<Login />} /> {/* Default route */}
+       
       </Routes>
     </Router>
   );
