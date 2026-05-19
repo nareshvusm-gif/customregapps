@@ -2,14 +2,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/dashboard';
-import BookingList from './components/BookingList';
+import CurrentBookings from './components/booking/CurrentBookings';
+import UpcomingBookings from './components/booking/UpcomingBookings';
 import BookingLists from './components/BookingLists';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/BookingList" element={<BookingList />} />
+        <Route path="/CurrentBookings" element={<CurrentBookings />} />
+        <Route path="/UpcomingBookings" element={<UpcomingBookings />} />
         <Route path="/BookingLists" element={<BookingLists />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -9,9 +9,9 @@ function Dashboard() {
       <h1>Welcome to the Dashboard!</h1>
       <p>This is a protected page that only logged-in users can see.</p>
       <br />
-      <button onClick={() => navigate('/bookingList')}>Go to Booking List</button>
+      <button onClick={() => navigate('/CurrentBookings')}>Today's Bookings</button>
       <br />
-      <button onClick={() => navigate('/bookingLists')}>Booking Lists</button>
+      <button onClick={() => navigate('/UpcomingBookings')}>Upcoming Bookings</button>
       <br />
       <button onClick={() => navigate('/login')}>Logout</button>
     
