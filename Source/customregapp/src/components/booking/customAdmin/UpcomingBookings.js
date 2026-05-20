@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CurrentBookings.css'; // Assuming you have some basic styles for the booking list
+import './customAStyle/CurrentBookings.css'; // Assuming you have some basic styles for the booking list
 
 const UpcomingBookings = () => {
   const [users, setUsers] = useState([]);      // Stores the API data
@@ -40,7 +40,7 @@ const UpcomingBookings = () => {
       <h1>Upcoming Bookings</h1>
       <ul>
         {users.map(user => (
-          <li key={user.id}>{user.id} - {user.userName} - {user.userPhNum} - {user.bookingDate}</li>
+          <li key={user.id}>{user.id} - {user.userName} - {user.userPhNum} - {new Date(user.bookingDate).toLocaleDateString()}</li>
         ))}
       </ul>
     </div>

@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/dashboard';
-import CurrentBookings from './components/booking/CurrentBookings';
-import UpcomingBookings from './components/booking/UpcomingBookings';
-import BookingLists from './components/BookingLists';
+import CurrentBookings from './components/booking/customAdmin/CurrentBookings';
+import UpcomingBookings from './components/booking/customAdmin/UpcomingBookings';
+import UserBooking from './components/booking/customClient/UserBooking';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/CurrentBookings" element={<CurrentBookings />} />
         <Route path="/UpcomingBookings" element={<UpcomingBookings />} />
-        <Route path="/BookingLists" element={<BookingLists />} /> 
+        <Route path="/UserBooking" element={<UserBooking />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />

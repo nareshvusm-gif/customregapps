@@ -13,6 +13,8 @@ function Dashboard() {
       <br />
       <button onClick={() => navigate('/UpcomingBookings')}>Upcoming Bookings</button>
       <br />
+      <button onClick={() => navigate('/UserBooking')}>User Booking</button>
+      <br />
       <button onClick={() => navigate('/login')}>Logout</button>
     
     </div>

@@ -3,7 +3,7 @@ import react from "react";
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './CurrentBookings.css';
+import './customAStyle/CurrentBookings.css';
 
 function CurrentBookings() {
   // 1. Set up state for your input and the response
@@ -69,7 +69,9 @@ function CurrentBookings() {
           <p>ID: {item.id}</p>
           <p>userName: {item.userName}</p>  
           <p>userPhNum: {item.userPhNum}</p>
-          <p>bookingDate: {item.bookingDate}</p>
+          <p>bookingDate: {new Date(item.bookingDate).toLocaleDateString()}</p> 
+          {/* dateformatting */}
+          
           <hr />
         </div>
       ))}
