@@ -48,28 +48,30 @@ function CurrentBookings() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="current-booking-card">
         
-      <h2 className="h2">Today's Bookings</h2>
+      <h2 className="current-booking-card-header">
+        Today's Bookings
+      </h2>
       
-      <form onSubmit={handleSubmit}>
+      <form className="current-booking-form" onSubmit={handleSubmit}>
          <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             showTimeSelect
             dateFormat="Pp" // Displays both date and time
           />
-        <button type="submit">Submit</button>
+        <button className="send-btn" type="submit">Submit</button>
       </form>
       <br /><br />
       <hr />
       <h1 className="h3">Booking Details </h1>
       {response.map((item) => (
-        <div className="booking-item" key={item.id}>
-          <p>ID: {item.id}</p>
-          <p>userName: {item.userName}</p>  
-          <p>userPhNum: {item.userPhNum}</p>
-          <p>bookingDate: {new Date(item.bookingDate).toLocaleDateString()}</p> 
+        <div className="current-booking-card" key={item.id}>
+          <p className="p">ID: {item.id}</p>
+          <p className="p">userName: {item.userName}</p>  
+          <p className="p">userPhNum: {item.userPhNum}</p>
+          <p className="p">bookingDate: {new Date(item.bookingDate).toLocaleDateString()}</p> 
           {/* dateformatting */}
           
           <hr />

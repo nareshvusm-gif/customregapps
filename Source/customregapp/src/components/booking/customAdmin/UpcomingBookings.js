@@ -36,11 +36,15 @@ const UpcomingBookings = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Upcoming Bookings</h1>
-      <ul>
+    <div className="upcoming-booking-card">
+      <h1 className="current-booking-card-header">Upcoming Bookings</h1>
+      <br />
+      <h2 className="h3">Booking Details: </h2>
+      <ul className="current-booking-card-header-ul">
         {users.map(user => (
-          <li key={user.id}>{user.id} - {user.userName} - {user.userPhNum} - {new Date(user.bookingDate).toLocaleDateString()}</li>
+          <li className="current-booking-card-header-ul-li" key={user.id}>
+            {user.id} - {user.userName} - {user.userPhNum} - {new Date(user.bookingDate).toLocaleDateString()}
+          </li>
         ))}
       </ul>
     </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { useNavigate, Link } from 'react-router-dom';
 
-import './login.css'; // Assuming you have some basic styles for auth forms
+import './customAStyle/login.css'; // Assuming you have some basic styles for auth forms
 
 function Login() {
    const [userName, setUserName] = useState('');
@@ -29,22 +29,22 @@ function Login() {
   };
 
   return (
-    <div className="div-container">
-      <div className="div-container.header">
+    <div className="login-card">
+      <div className="login-card-header">
         <h2 className='text'>Login</h2>
         <div className="underline"></div>
       </div>
       <br />
-      <form className="form-container" onSubmit={handleSubmit}>
-        <p className='p-username'>Username or email address *</p>
-        <input className="input-text" type="userName" value={userName} placeholder="Username" onChange={(e) => setUserName(e.target.value)} required />
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label>Username/Email address *</label>
+        <input className="input-text" type="email" value={userName} placeholder="Username or Email" onChange={(e) => setUserName(e.target.value)} required />
         <br />
-        <p className='p-pwd'>Password *</p>
+        <label>Password *</label>
         <input className="input-text" type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
         <br />
-        <button className="submit" type="submit">Login</button>
+        <button className="send-btn" type="submit">Login</button>
       </form>
-      <p className="r-submit"><Link to="/register">REGISTER</Link></p>
+      <p className="register-link"><Link to="/register">REGISTER</Link></p>
     </div>
   );
 }

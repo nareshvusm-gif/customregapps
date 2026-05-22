@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import '././CurrentBookings.css';
+import './clientStyle/UserBookingStyle.css';
+
 import { useNavigate, Link } from 'react-router-dom';
 
 
@@ -36,11 +37,12 @@ function UserBooking () {
    };
  
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="booking-card">
         
-      <h2 className="h2">Book Appointment</h2>
+      <h2 className="booking-card-header">Book Appointment</h2>
       
-      <form onSubmit={handleSubmit}>
+      <form className='booking-form' onSubmit={handleSubmit}>
+            <label>Select Booking Date *</label>
          <DatePicker
             selected={startDate}
             onChange={(date) => setBookingDate(date)}
@@ -48,11 +50,13 @@ function UserBooking () {
             dateFormat="Pp" // Displays both date and time
           />
             <br />
+            <label>Full Name *</label>
           <input type="text" name="userName" value={userName} onChange={(e) => setUserName(e.target.value)} />
           <br />
-          <input type="text" name="userPhNum" value={userPhNum} onChange={(e) => setUserPhNum(e.target.value)} />
+           <label>Mobile Number *</label>
+          <input type="text" name="userPhNum" value={userPhNum} placeholder="10-digit mobile number" onChange={(e) => setUserPhNum(e.target.value)} />
            <br />
-        <button type="submit">Submit</button>
+        <button className="send-btn" type="submit">✈️Submit</button>
       </form>
     </div>
   );
