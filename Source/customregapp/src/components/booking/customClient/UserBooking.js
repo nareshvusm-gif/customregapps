@@ -10,14 +10,12 @@ import { useNavigate, Link } from 'react-router-dom';
 function UserBooking () {
      const [userName, setUserName] = useState('');
      const [userPhNum, setUserPhNum] = useState('');
-     const [bookingDate, setBookingDate] = useState('');
      const [startDate, setStartDate] = useState(new Date());
      const [response, setResponse] = useState([]);
     const navigate = useNavigate();
 
 
      const handleSubmit = async (e) => {
-      setBookingDate(startDate); // Update bookingDate state with the selected date
      e.preventDefault(); // Prevents page reload
      console.log("Booking in name with:", userName);
     navigate('/dashboard');
@@ -26,7 +24,7 @@ function UserBooking () {
        const response = await axios.post('http://localhost:8080/bookingAPI/bookingUser', {
          userName: userName,
          userPhNum: userPhNum,
-          bookingDate: bookingDate // Assuming the API expects a field named 'bookingDate'
+          bookingDate: startDate // Assuming the API expects a field named 'bookingDate'
        });
        
        console.log('Booking Success:', response.data);
@@ -45,7 +43,7 @@ function UserBooking () {
             <label>Select Booking Date *</label>
          <DatePicker
             selected={startDate}
-            onChange={(date) => setBookingDate(date)}
+            onChange={(date) => setStartDate(date)}
             showTimeSelect
             dateFormat="Pp" // Displays both date and time
           />
